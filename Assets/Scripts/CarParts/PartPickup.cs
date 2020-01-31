@@ -9,7 +9,7 @@ public class PartPickup : MonoBehaviour
 
     private void Start()
     {
-        //player = GameObject.Find("Player");
+        player = GameObject.Find("PoppyPig");
     }
 
     private void OnTriggerEnter(Collider other)
