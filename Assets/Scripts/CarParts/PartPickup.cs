@@ -5,22 +5,22 @@ using UnityEngine;
 public class PartPickup : MonoBehaviour
 {
     public GameObject carPart;
-    public GameObject player;
+    public PlayerPickUp playerPickup;
 
     private void Start()
     {
-        player = GameObject.Find("PoppyPig");
+        playerPickup = GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        player.GetComponent<PlayerPickUp>().inTrigger = true;
-        player.GetComponent<PlayerPickUp>().inTriggerObject = this.gameObject;
+        playerPickup.inTrigger = true;
+        playerPickup.inTriggerObject = this.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        player.GetComponent<PlayerPickUp>().inTrigger = false;
-        player.GetComponent<PlayerPickUp>().inTriggerObject = null;
+        playerPickup.inTrigger = false;
+        playerPickup.inTriggerObject = null;
     }
 }
