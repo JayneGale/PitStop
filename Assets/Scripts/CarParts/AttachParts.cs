@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class AttachParts : MonoBehaviour
 {
-    public GameObject neededPart;
     public GameObject tyre;
-    PlayerPickUp playerPickup;
-    private void Start()
-    {
-        playerPickup = GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>();
-    }
+    public PlayerPickUp playerPickup;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (playerPickup.carriedObject = neededPart)
+        if (playerPickup.carryTire)
         {
-            Destroy(playerPickup.carriedObject);
-            playerPickup.carriedObject = null;
+            playerPickup.carryTire = false;
             tyre.SetActive(true);
+            playerPickup.carryingPart[0].SetActive(false);
+            playerPickup.isCarrying = false;
         }
     }
 }

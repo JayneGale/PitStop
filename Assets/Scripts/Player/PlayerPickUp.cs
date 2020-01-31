@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerPickUp : MonoBehaviour
 {
     public bool isCarrying;
-    public GameObject carriedObject;
+    public bool carryTire;
+    public GameObject[] carryingPart;
 
     public bool inTrigger;
     public GameObject inTriggerObject;
@@ -18,15 +19,17 @@ public class PlayerPickUp : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !isCarrying)
             {
                 isCarrying = true;
-                carriedObject = Instantiate(inTriggerObject.GetComponent<PartPickup>().carPart, this.gameObject.transform.position + new Vector3(0,3,0), Quaternion.identity);
-                carriedObject.transform.parent = this.gameObject.transform;
-                carriedObject.transform.localScale = new Vector3(1, 1, 1);
+                PickUp();
             }
         }
     }
 
-    public void PickUp()
+    void PickUp()
     {
-
+        if(inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Tire)
+        {
+            carryTire = true;
+            carryingPart[0].SetActive(true);
+        }
     }
 }
