@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5963933141754839498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4725357299234839737}
   m_Father: {fileID: 0}
@@ -152,4 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPart: {fileID: 5924828744161395285, guid: 60bacf7b719129c478db15c0f979ea1f, type: 3}
-  player: {fileID: 0}
+  playerPickup: {fileID: 0}
