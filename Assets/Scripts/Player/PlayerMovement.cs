@@ -1,26 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public bool canMove;
-
-    // Start is called before the first frame update
-    void Start()
+    public Vector2 position;
+    public void Fire(InputAction.CallbackContext context)
     {
-        
+        Debug.Log("Fire!");
     }
-
+    public void Move(InputAction.CallbackContext context){
+        var moveDirection = context.ReadValue<Vector2>();
+        position = moveDirection * speed * Time.deltaTime;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         if (canMove)
         {
-            float horizonDir = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-            float VerticalDir = Input.GetAxisRaw("Vertical") * Time.deltaTime;
-            transform.position += new Vector3(horizonDir * speed, 0, VerticalDir * speed);
+            transform.position += new Vector3(position.x * speed, 0, position.y * speed);
+            
         }
     }
 }
