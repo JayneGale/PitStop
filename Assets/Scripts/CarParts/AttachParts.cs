@@ -6,12 +6,17 @@ public class AttachParts : MonoBehaviour
 {
     public GameObject neededPart;
     public GameObject tyre;
+    PlayerPickUp playerPickup;
+    private void Start()
+    {
+        playerPickup = GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>().carriedObject = neededPart)
+        if (playerPickup.carriedObject = neededPart)
         {
-            Destroy(GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>().carriedObject);
-            GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>().carriedObject = null;
+            Destroy(playerPickup.carriedObject);
+            playerPickup.carriedObject = null;
             tyre.SetActive(true);
         }
     }
