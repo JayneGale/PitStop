@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum CarPart
 {
-    Tire
+    Tire,
+    Hood
 }
 
 public class PartPickup : MonoBehaviour

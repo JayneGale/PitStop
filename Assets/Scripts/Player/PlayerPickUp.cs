@@ -6,6 +6,7 @@ public class PlayerPickUp : MonoBehaviour
 {
     public bool isCarrying;
     public bool carryTire;
+    public bool carryHood;
     public GameObject[] carryingPart;
 
     public bool inTrigger;
@@ -30,6 +31,11 @@ public class PlayerPickUp : MonoBehaviour
         {
             carryTire = true;
             carryingPart[0].SetActive(true);
+        }
+        if (inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Hood)
+        {
+            carryHood = true;
+            carryingPart[1].SetActive(true);
         }
     }
 }
