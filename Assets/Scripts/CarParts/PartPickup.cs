@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CarPart
+{
+    Tire,
+    Hood
+}
+
 public class PartPickup : MonoBehaviour
 {
-    public GameObject carPart;
-    public PlayerPickUp playerPickup;
-
-    private void Start()
-    {
-        playerPickup = GameObject.Find("PoppyPig").GetComponent<PlayerPickUp>();
-    }
+    public CarPart carPartEnum;
 
     private void OnTriggerEnter(Collider other)
     {
-        playerPickup.inTrigger = true;
-        playerPickup.inTriggerObject = this.gameObject;
+        other.GetComponent<PlayerPickUp>().inTrigger = true;
+        other.GetComponent<PlayerPickUp>().inTriggerObject = this.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        playerPickup.inTrigger = false;
-        playerPickup.inTriggerObject = null;
+        other.GetComponent<PlayerPickUp>().inTrigger = false;
+        other.GetComponent<PlayerPickUp>().inTriggerObject = null;
     }
 }

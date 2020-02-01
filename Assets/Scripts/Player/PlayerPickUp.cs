@@ -5,28 +5,48 @@ using UnityEngine;
 public class PlayerPickUp : MonoBehaviour
 {
     public bool isCarrying;
-    public GameObject carriedObject;
+    public bool carryTire;
+    public bool carryHood;
+    public GameObject[] carryingPart;
 
     public bool inTrigger;
     public GameObject inTriggerObject;
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void Fire()
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E) && !isCarrying)
+            if (!isCarrying)
             {
                 isCarrying = true;
-                carriedObject = Instantiate(inTriggerObject.GetComponent<PartPickup>().carPart, this.gameObject.transform.position + new Vector3(0,3,0), Quaternion.identity);
-                carriedObject.transform.parent = this.gameObject.transform;
-                carriedObject.transform.localScale = new Vector3(1, 1, 1);
+                PickUp();
             }
         }
     }
 
-    public void PickUp()
+    void PickUp()
     {
+        if(inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Tire)
+        {
+            carryTire = true;
+            carryingPart[0].SetActive(true);
+        }
+        if (inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Hood)
+        {
+            carryHood = true;
+            carryingPart[1].SetActive(true);
+        }
+    }
 
+    public void ResetHold()
+    {
+        carryTire = false;
+        carryHood = false;
+        isCarrying = false;
+        for (int i = 0; i < carryingPart.Length; i++)
+        {
+            carryingPart[i].SetActive(false);
+        }
     }
 }
