@@ -24,10 +24,10 @@ public class Traffic : MonoBehaviour
         switch (_dir)
         {
             case Direction.Left:
-                transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+                transform.localPosition -= new Vector3(speed * Time.deltaTime, 0, 0);
                 break;
             case Direction.Right:
-                transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+                transform.localPosition += new Vector3(speed * Time.deltaTime, 0, 0);
                 break;
         }
     }
