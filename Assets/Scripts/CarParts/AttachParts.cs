@@ -21,11 +21,9 @@ public class AttachParts : MonoBehaviour
             {
                 if (pickup.carryTire)
                 {
-                    pickup.carryTire = false;
                     partsRequired[0] = false;
                     tyre.SetActive(true);
-                    pickup.carryingPart[0].SetActive(false);
-                    pickup.isCarrying = false;
+                    pickup.ResetHold();
                 }
             }
         }
@@ -40,11 +38,9 @@ public class AttachParts : MonoBehaviour
                 {
                     pickup = other.GetComponent<PlayerPickUp>();
 
-                    pickup.carryHood = false;
                     partsRequired[1] = false;
                     hood.SetActive(true);
-                    pickup.carryingPart[1].SetActive(false);
-                    pickup.isCarrying = false;
+                    pickup.ResetHold();
                 }
 
             }
