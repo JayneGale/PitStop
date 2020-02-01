@@ -2094,8 +2094,10 @@ MonoBehaviour:
   oilSlick: {fileID: 8052637184439525850, guid: 243f2e5be4a4e814cb221ab9ecc46180,
     type: 3}
   holeSpawn:
+  - {x: 0, y: 0}
   - {x: 5, y: 0}
-  - {x: 10, y: 0}
+  - {x: 0, y: 5}
+  - {x: 5, y: 10}
   oilSpawn:
   - {x: -5, y: 0}
   - {x: -10, y: 0}

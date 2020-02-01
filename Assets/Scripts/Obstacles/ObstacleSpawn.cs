@@ -15,11 +15,13 @@ public class ObstacleSpawn : MonoBehaviour
     {
         for (int i = 0; i < holeSpawn.Length; i++)
         {
-            Instantiate(hole, holeSpawn[i], Quaternion.identity);
+            Vector3 holePosition = new Vector3(holeSpawn[i].x, 0.1f, holeSpawn[i].y);
+            Instantiate(hole, holePosition, Quaternion.identity);
         }
         for (int i = 0; i < oilSpawn.Length; i++)
         {
-            Instantiate(oilSlick, oilSpawn[i], Quaternion.identity);
+            Vector3 oilPosition = new Vector3(holeSpawn[i].x, 0.1f, holeSpawn[i].y);
+            Instantiate(oilSlick, oilPosition, Quaternion.identity);
         }
     }
 }
