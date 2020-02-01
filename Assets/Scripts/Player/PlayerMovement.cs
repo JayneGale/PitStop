@@ -4,12 +4,23 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
+    
     public float speed;
     public float bounceMultiplier;
     public float bounceSpeed;
     public bool canMove;
+    
     public Vector2 position;
     public Animator _anim;
+
+    public float currentUnwieldyFactor;
+    public float randomMovementCheckInterval = 2.5f;
+    public float randomMovementDuration = 0.7f;
+    bool willGenerateRandomMovementVector;
+    bool isAddingRandomMovement;
+    float randomMovementDurationTimer;
+    float randomMovementCheckIntervalTimer;
+    Vector2 randomMovement;
 
     Vector3 bounceLocation;
 
@@ -21,14 +32,15 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context){
 
         var moveDirection = context.ReadValue<Vector2>();
+        UpdateMovementTimer();
+        CheckForRandomVector();
         position = moveDirection * speed * Time.deltaTime;
         if (gameObject.activeSelf)
         {
             if (position != Vector2.zero)
             {
-                print(gameObject.name);
+                position += randomMovement * Time.deltaTime;
                  _anim.SetBool("Walking", true);
-                print(gameObject.name);
                 var v3Position = new Vector3(position.x, 0, position.y);
                 transform.rotation = Quaternion.LookRotation(v3Position);
             }
@@ -39,6 +51,38 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
+    Vector2 GenerateRandomMovementVector()
+    {
+        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * currentUnwieldyFactor;
+    }
+
+    void CheckForRandomVector()
+    {
+        if (randomMovementCheckIntervalTimer < randomMovementCheckInterval)
+        {
+            randomMovementCheckIntervalTimer += Time.deltaTime;
+            willGenerateRandomMovementVector = randomMovementCheckIntervalTimer > randomMovementCheckInterval;
+        }
+        if (willGenerateRandomMovementVector)
+        {
+            randomMovement = GenerateRandomMovementVector();
+            willGenerateRandomMovementVector = false;
+            isAddingRandomMovement = true;
+            randomMovementDurationTimer = 0f;
+        }
+    }
+    void UpdateMovementTimer()
+    {
+        randomMovementDurationTimer += Time.deltaTime;
+        if(isAddingRandomMovement && randomMovementDurationTimer > randomMovementDuration)
+        {
+            isAddingRandomMovement = false;
+            randomMovementCheckIntervalTimer = 0;
+            randomMovement = new Vector2();
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -53,10 +97,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             canMove = false;
-            Debug.Log("Hit");
-            Debug.Log(collision.contacts[0].normal);
             bounceLocation = transform.position + (collision.contacts[0].normal * bounceMultiplier);
-            Debug.Log(bounceLocation);
             StartCoroutine("Bouncing");
         }
     }
