@@ -12,6 +12,8 @@ public class PlayerPickUp : MonoBehaviour
     public bool inTrigger;
     public GameObject inTriggerObject;
 
+    public Animator _anim;
+
     // Update is called once per frame
     public void Fire()
     {
@@ -37,6 +39,7 @@ public class PlayerPickUp : MonoBehaviour
             carryHood = true;
             carryingPart[1].SetActive(true);
         }
+        _anim.SetBool("Carry", true);
     }
 
     public void ResetHold()
@@ -48,5 +51,6 @@ public class PlayerPickUp : MonoBehaviour
         {
             carryingPart[i].SetActive(false);
         }
+        _anim.SetBool("Carry", false);
     }
 }

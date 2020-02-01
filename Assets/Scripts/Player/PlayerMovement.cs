@@ -9,16 +9,35 @@ public class PlayerMovement : MonoBehaviour
     public float bounceSpeed;
     public bool canMove;
     public Vector2 position;
+    public Animator _anim;
 
     Vector3 bounceLocation;
+
     public void Fire(InputAction.CallbackContext context)
     {
         Debug.Log("Fire!");
         GetComponent<PlayerPickUp>().Fire();
     }
     public void Move(InputAction.CallbackContext context){
+
         var moveDirection = context.ReadValue<Vector2>();
         position = moveDirection * speed * Time.deltaTime;
+        if (gameObject.activeSelf)
+        {
+            if (position != Vector2.zero)
+            {
+                print(gameObject.name);
+                 _anim.SetBool("Walking", true);
+                print(gameObject.name);
+                var v3Position = new Vector3(position.x, 0, position.y);
+                transform.rotation = Quaternion.LookRotation(v3Position);
+            }
+            else
+            {
+                _anim.SetBool("Walking", false);
+            }
+        }
+        
     }
     // Update is called once per frame
     void FixedUpdate()
