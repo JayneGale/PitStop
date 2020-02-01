@@ -5,7 +5,10 @@ using UnityEngine;
 public enum CarPart
 {
     Tire,
-    Hood
+    Hood,
+    BigTire,
+    TruckBed,
+    TruckCab
 }
 
 public class PartPickup : MonoBehaviour

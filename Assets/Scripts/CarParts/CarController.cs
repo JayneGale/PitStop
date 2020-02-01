@@ -10,6 +10,10 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     public Transform destination;
         // Movement speed in units per second.
+
+    public Transform pitstop;
+    public ScoreManager score;
+    public bool haveScored;
     public float speed = 1.0F;
 
     // Time when the movement started.
@@ -21,6 +25,7 @@ public class CarController : MonoBehaviour
     {
         startTime = Time.time;
         journeyLength = Vector3.Distance(gameObject.transform.position,destination.position);
+        haveScored =false;
     }
 
     // Update is called once per frame
@@ -37,13 +42,16 @@ public class CarController : MonoBehaviour
         }
         if(fixedpartcount == carParts.Length){
             repaired =true;
-
+            if(haveScored==false){   
+                score.scoreUp();
+                haveScored =true;
+            }
         }
         if(repaired){
             //move the car closer
             //find the direction between gameObject.transform and destination
             //translate by some speed factor
-                    // Distance moved equals elapsed time multiplied by speed..
+            // Distance moved equals elapsed time multiplied by speed..
             float distCovered = (Time.time - startTime) * speed* Time.deltaTime;
             // Fraction of journey completed equals current distance divided by total distance.
             float fractionOfJourney = distCovered / journeyLength;
