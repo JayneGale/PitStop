@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Wheel :  Pickupable 
 {
-    AudioManager AM;
+    //AudioManager AM;
 
     void Start()
     {
-        AM = FindObjectOfType<AudioManager>();
+        //AM = FindObjectOfType<AudioManager>();
         print(dropSoundName);
         //print("itemID is " + itemID + itemName);
         Unwieldy(unwieldyFactor);
