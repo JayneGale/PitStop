@@ -11,6 +11,7 @@ public class HoleScript : MonoBehaviour
             other.GetComponent<Renderer>().enabled = false;
             other.GetComponent<PlayerSpawn>().Respawn();
             other.GetComponent<PlayerMovement>().canMove = false;
+            other.GetComponent<PlayerPickUp>().ResetHold();
         }
     }
 }

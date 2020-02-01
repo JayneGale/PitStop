@@ -13,11 +13,11 @@ public class PlayerPickUp : MonoBehaviour
     public GameObject inTriggerObject;
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void Fire()
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E) && !isCarrying)
+            if (!isCarrying)
             {
                 isCarrying = true;
                 PickUp();
@@ -36,6 +36,17 @@ public class PlayerPickUp : MonoBehaviour
         {
             carryHood = true;
             carryingPart[1].SetActive(true);
+        }
+    }
+
+    public void ResetHold()
+    {
+        carryTire = false;
+        carryHood = false;
+        isCarrying = false;
+        for (int i = 0; i < carryingPart.Length; i++)
+        {
+            carryingPart[i].SetActive(false);
         }
     }
 }
