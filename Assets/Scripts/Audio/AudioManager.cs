@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine;
 using System;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sounds[] sounds;
+    public Sound[] sound;
     public static AudioManager instance;
     void Awake()
     {
@@ -24,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        foreach (Sounds s in sounds)
+        foreach (Sound s in sound)
         {
 
             s.source = gameObject.AddComponent<AudioSource>();
@@ -40,12 +39,11 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Theme");
-        Play("Wind");
     }
 
     public void Play(string sound)
     {
-        Sounds s = Array.Find(sounds, item => item.name == sound);
+        Sound s = Array.Find(this.sound, item => item.name == sound);
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
@@ -57,7 +55,7 @@ public class AudioManager : MonoBehaviour
 
     public void Stop(string sound)
     {
-        Sounds s = Array.Find(sounds, item => item.name == sound);
+        Sound s = Array.Find(this.sound, item => item.name == sound);
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
