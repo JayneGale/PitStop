@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7140434724060875765}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7148901367165668506}
   - component: {fileID: 915837298262259268}
+  - component: {fileID: 1293563329307124610}
+  - component: {fileID: 4016381960506287835}
   m_Layer: 0
   m_Name: hole-clipart-6
   m_TagString: Untagged
@@ -112,3 +114,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1293563329307124610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095235082331236377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8909f728889378a488be33c51f2f7618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4016381960506287835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095235082331236377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 5.5200014, z: 1.6918744}
+  m_Center: {x: 0, y: 3.4949816e-15, z: -0.74593735}
