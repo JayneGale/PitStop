@@ -15,7 +15,7 @@ public class EnemyCarRespawn : MonoBehaviour
     {
         if(_dir == SpawnDirection.Left)
         {
-            other.transform.position += new Vector3(55, 0.0f, 0.0f);
+            other.transform.localPosition += new Vector3(55, 0.0f, 0.0f);
         }
         else
         {
