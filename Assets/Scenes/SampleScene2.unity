@@ -626,7 +626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1609298704}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &521792550
 PrefabInstance:
@@ -1218,180 +1218,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 810700466}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1010698700}
-  - component: {fileID: 1010698699}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1010698699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010698698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49d9150dfae4044d98f0f76686f89c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound:
-  - name: Theme
-    clip: {fileID: 8300000, guid: 0669e0948a322364faad1713765237b5, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 1
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Theme2
-    clip: {fileID: 8300000, guid: 131f6d9a7f1113a469c10a42b0ee5061, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: MenuTheme
-    clip: {fileID: 8300000, guid: 21a2ffc28fd5035449bab315e32bf635, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: SlipFall
-    clip: {fileID: 8300000, guid: 977a2e0d32776894f8a7b5a603f67ecc, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Slippery
-    clip: {fileID: 8300000, guid: 4233380991c2c9d4cb30c45bd625a56e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: HammerL
-    clip: {fileID: 8300000, guid: 4bfc90bc856347e48a498f631971de4a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: HammerM
-    clip: {fileID: 8300000, guid: 4bfc90bc856347e48a498f631971de4a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: HammerH
-    clip: {fileID: 8300000, guid: f600f79d12f4d5d41bc575cf74e789bd, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: MetalL
-    clip: {fileID: 8300000, guid: 60cd4aaae044c7c40ad2e5156bd8ca5b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: GlassBreak
-    clip: {fileID: 8300000, guid: b9253842f260f3843a417e5b149688ec, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: DropBolt
-    clip: {fileID: 8300000, guid: 8ae70c566b8b07c4ea31e52ace5e137a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Click
-    clip: {fileID: 8300000, guid: 18245d1f57b8db1449af7a0fa280be46, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: FailBuzz
-    clip: {fileID: 8300000, guid: bfa260162bf660a4099cd51c23e36faf, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: FailPew
-    clip: {fileID: 8300000, guid: 4592eaa0aabce0247a09e98634267a8f, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Good
-    clip: {fileID: 8300000, guid: 817a02496a3c51948b4d019a32ba4533, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Good2
-    clip: {fileID: 8300000, guid: 70c4409331e3702418e9340b810b9c87, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
-  - name: Disappoint
-    clip: {fileID: 8300000, guid: 7e50412be830609409236cd02b77b397, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 0}
-    source: {fileID: 0}
---- !u!4 &1010698700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010698698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8199183, y: 0.6130141, z: -1.4411107}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060670606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,10 +1819,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5006512735242597614}
-  - {fileID: 106362018}
   - {fileID: 242886123}
+  - {fileID: 5006512735242597614}
   - {fileID: 6892877665588046748}
+  - {fileID: 106362018}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
