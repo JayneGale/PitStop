@@ -1,5 +1,5 @@
-Hole, 0, 0
-Hole, 5, 0
-Hole, 0, 5
+Hole, 45, 0
+Hole, 45, 0
+Hole, 45, 5
 Hole, 5, 5
 Oil , 10,3
