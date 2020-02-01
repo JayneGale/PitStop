@@ -2318,6 +2318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2790c5117c4eb54b929eae636fbd2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclesFile: {fileID: 0}
+  obstacleTypes: []
   hole: {fileID: 4841026689205415526, guid: abe3493307f4692439f36fc5ed5dc3a1, type: 3}
   oilSlick: {fileID: 8052637184439525850, guid: 243f2e5be4a4e814cb221ab9ecc46180,
     type: 3}
@@ -2730,7 +2732,7 @@ PrefabInstance:
     - target: {fileID: 1908851647813932631, guid: 60779589891ab914ca35f4133711e24a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1908851647813932631, guid: 60779589891ab914ca35f4133711e24a,
         type: 3}
@@ -2755,7 +2757,7 @@ PrefabInstance:
     - target: {fileID: 1908851647813932631, guid: 60779589891ab914ca35f4133711e24a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1908851647813932631, guid: 60779589891ab914ca35f4133711e24a,
         type: 3}
