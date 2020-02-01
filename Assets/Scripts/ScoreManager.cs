@@ -11,8 +11,13 @@ public class ScoreManager : MonoBehaviour
     {
         score =0;
     }
-    public void scoreUp(){
-        score++;
+    public void ScoreUp(int amount)
+    {
+        score += amount;
+    }
+    public void ScoreDown(int amount)
+    {
+        ScoreUp(-amount);
     }
     // Update is called once per frame
     void FixedUpdate()
