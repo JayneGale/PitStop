@@ -1518,6 +1518,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280818327}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1282364899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6880690892449113232, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0441105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99902666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113234, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880690892449113238, guid: 0962ad1960313b341ba19953e4f27dda,
+        type: 3}
+      propertyPath: m_Name
+      value: CapsuleLocal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0962ad1960313b341ba19953e4f27dda, type: 3}
+--- !u!1 &1282364900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6880690892449113238, guid: 0962ad1960313b341ba19953e4f27dda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282364899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1371928971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963933141754839494, guid: 271504216f1b11e4aab43b8e7ed1bdd3,
@@ -1553,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 0
@@ -1574,8 +1654,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6880690892449113238, guid: 0962ad1960313b341ba19953e4f27dda,
-    type: 3}
+  m_PlayerPrefab: {fileID: 1282364900}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
