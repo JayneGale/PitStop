@@ -14,6 +14,12 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Respawn()
     {
+        StartCoroutine("SpawnIn");
+    }
+
+    IEnumerator SpawnIn()
+    {
+        yield return new WaitForSeconds(2f);
         transform.position = spawnPoint;
         GetComponent<Renderer>().enabled = true;
     }
