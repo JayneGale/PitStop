@@ -2090,6 +2090,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2790c5117c4eb54b929eae636fbd2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclesFile: {fileID: 4900000, guid: 4f5cffef5e8004e44ab854df55709270, type: 3}
+  obstacleTypes:
+  - name: Hole
+    gameObject: {fileID: 4841026689205415526, guid: abe3493307f4692439f36fc5ed5dc3a1,
+      type: 3}
+  - name: Oil
+    gameObject: {fileID: 8052637184439525850, guid: 243f2e5be4a4e814cb221ab9ecc46180,
+      type: 3}
   hole: {fileID: 4841026689205415526, guid: abe3493307f4692439f36fc5ed5dc3a1, type: 3}
   oilSlick: {fileID: 8052637184439525850, guid: 243f2e5be4a4e814cb221ab9ecc46180,
     type: 3}
