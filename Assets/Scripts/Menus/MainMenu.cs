@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
 {
     int _thisSceneBuildIndex;
     AudioSource source;
-    AudioClip clip;
 
     private void Start()
     {
