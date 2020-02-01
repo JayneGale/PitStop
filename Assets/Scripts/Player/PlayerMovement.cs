@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public void Fire(InputAction.CallbackContext context)
     {
         Debug.Log("Fire!");
+        GetComponent<PlayerPickUp>().Fire();
     }
     public void Move(InputAction.CallbackContext context){
         var moveDirection = context.ReadValue<Vector2>();
@@ -20,7 +21,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-            transform.position += new Vector3(position.x * speed, 0, position.y * speed);
+            transform.position += new Vector3(position.x * speed, 0, position.y * speed);           
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit");
+            Debug.Log(collision.contacts[0].normal);
             
         }
     }

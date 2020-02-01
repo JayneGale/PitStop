@@ -11,7 +11,6 @@ public enum CarPart
 public class PartPickup : MonoBehaviour
 {
     public CarPart carPartEnum;
-    public PlayerPickUp playerPickup;
 
     private void OnTriggerEnter(Collider other)
     {

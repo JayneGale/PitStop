@@ -8,32 +8,31 @@ public class AttachParts : MonoBehaviour
     public bool[] partsRequired;
 
     public GameObject tyre, hood;
-    public PlayerPickUp playerPickup;
     public CarController carCont;
 
     private void OnTriggerEnter(Collider other)
     {
         if (partsRequired[0])
         {
-            if (playerPickup.carryTire)
+            if (other.GetComponent<PlayerPickUp>().carryTire)
             {
-                playerPickup.carryTire = false;
+                other.GetComponent<PlayerPickUp>().carryTire = false;
                 partsRequired[0] = false;
                 tyre.SetActive(true);
-                playerPickup.carryingPart[0].SetActive(false);
-                playerPickup.isCarrying = false;
+                other.GetComponent<PlayerPickUp>().carryingPart[0].SetActive(false);
+                other.GetComponent<PlayerPickUp>().isCarrying = false;
             }
         }
 
         if (partsRequired[1])
         {
-            if (playerPickup.carryHood)
+            if (other.GetComponent<PlayerPickUp>().carryHood)
             {
-                playerPickup.carryHood = false;
+                other.GetComponent<PlayerPickUp>().carryHood = false;
                 partsRequired[1] = false;
                 hood.SetActive(true);
-                playerPickup.carryingPart[1].SetActive(false);
-                playerPickup.isCarrying = false;
+                other.GetComponent<PlayerPickUp>().carryingPart[1].SetActive(false);
+                other.GetComponent<PlayerPickUp>().isCarrying = false;
             }
         }
     }
