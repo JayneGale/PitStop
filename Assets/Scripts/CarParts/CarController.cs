@@ -6,6 +6,7 @@ public class CarController : MonoBehaviour
 {
     public GameObject[] carParts;
     public bool[] isPartThere;
+    public GameObject[] attachPartTrigger;
 
     // Start is called before the first frame update
     void Start()
