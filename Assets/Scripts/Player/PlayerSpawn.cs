@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSpawn : MonoBehaviour
 {
-    public Vector2 spawnPoint;
+    public Vector3 spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +22,6 @@ public class PlayerSpawn : MonoBehaviour
         yield return new WaitForSeconds(2f);
         transform.position = spawnPoint;
         GetComponent<Renderer>().enabled = true;
+        GetComponent<PlayerMovement>().canMove = true;
     }
 }
