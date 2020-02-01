@@ -5,8 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public float bounceMultiplier;
+    public float bounceSpeed;
     public bool canMove;
     public Vector2 position;
+
+    Vector3 bounceLocation;
     public void Fire(InputAction.CallbackContext context)
     {
         Debug.Log("Fire!");
@@ -29,9 +33,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            canMove = false;
             Debug.Log("Hit");
             Debug.Log(collision.contacts[0].normal);
-            
+            bounceLocation = transform.position + (collision.contacts[0].normal * bounceMultiplier);
+            Debug.Log(bounceLocation);
+            StartCoroutine("Bouncing");
+        }
+    }
+
+    IEnumerator Bouncing()
+    {
+        while (true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, bounceLocation, bounceSpeed * Time.deltaTime);
+            if(Vector3.Distance(transform.position, bounceLocation) < 0.1f)
+            {
+                canMove = true;
+                yield break;
+            }
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
