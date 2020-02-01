@@ -24,4 +24,14 @@ public class PlayerMovement : MonoBehaviour
             transform.position += new Vector3(position.x * speed, 0, position.y * speed);           
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit");
+            Debug.Log(collision.contacts[0].normal);
+            
+        }
+    }
 }
