@@ -13,15 +13,19 @@ public class ObstacleSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < holeSpawn.Length; i++)
+        foreach (Vector2 holePos in holeSpawn)
         {
-            Vector3 holePosition = new Vector3(holeSpawn[i].x, 0.1f, holeSpawn[i].y);
-            Instantiate(hole, holePosition, Quaternion.identity);
+            SpawnObject(hole, holePos);
         }
-        for (int i = 0; i < oilSpawn.Length; i++)
+        foreach (Vector2 oilPos in oilSpawn)
         {
-            Vector3 oilPosition = new Vector3(holeSpawn[i].x, 0.1f, holeSpawn[i].y);
-            Instantiate(oilSlick, oilPosition, Quaternion.identity);
+            SpawnObject(oilSlick, oilPos);
         }
+    }
+
+    void SpawnObject(GameObject gO, Vector2 tilePosition)
+    {
+        Vector3 position = new Vector3(tilePosition.x, 0.1f, tilePosition.y);
+        Instantiate(gO, position, Quaternion.identity);
     }
 }
