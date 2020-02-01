@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  bounceMultiplier: 4
+  bounceSpeed: 30
   canMove: 1
   position: {x: 0, y: 0}
 --- !u!114 &6880690892449113260
