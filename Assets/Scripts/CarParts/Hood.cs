@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Wheel :  Pickupable 
+public class Hood : Pickupable
 {
     AudioManager AM;
 
     void Start()
     {
         AM = FindObjectOfType<AudioManager>();
-        print(dropSoundName);
-        //print("itemID is " + itemID + itemName);
+        AM.Play(dropSoundName);
+        print("_itemID is " + itemID);
         Unwieldy(unwieldyFactor);
     }
 
     public override void Unwieldy(int UnwieldyFactor)
     {
-        print("UnwieldyFactor override  method is " + UnwieldyFactor + itemName + itemID);
-        //AM.Play(dropSoundName);
+        print("UnwieldyFactor second override is " + UnwieldyFactor + itemID + itemName);
     }
+
 }
