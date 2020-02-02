@@ -7,7 +7,7 @@ public class AttachParts : MonoBehaviour
 {
     public bool[] partsRequired;
 
-    public GameObject tyre, hood;
+    public GameObject wheel, hood, cabin, boot;
     public CarController carCont;
     PlayerPickUp pickup;
 
@@ -19,18 +19,18 @@ public class AttachParts : MonoBehaviour
             if (pickup == null) print("pickup is null");
             else 
             {
-                if (pickup.carryTire)
+                if (pickup.carryWheel)
                 {
-                    pickup.carryTire = false;
+                    pickup.carryWheel = false;
                     partsRequired[0] = false;
-                    tyre.SetActive(true);
+                    wheel.SetActive(true);
                     pickup.carryingPart[0].SetActive(false);
                     pickup.isCarrying = false;
                 }
             }
         }
 
-        if (partsRequired[1])
+        if (partsRequired.Length>1 && partsRequired[1])
         {
             pickup = other.GetComponent<PlayerPickUp>();
             if (pickup == null)  print("pickup is null");

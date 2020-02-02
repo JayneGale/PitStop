@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPickUp : MonoBehaviour
 {
     public bool isCarrying;
-    public bool carryTire;
+    public bool carryWheel;
     public bool carryHood;
     public GameObject[] carryingPart;
 
@@ -29,9 +29,9 @@ public class PlayerPickUp : MonoBehaviour
 
     void PickUp()
     {
-        if(inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Tire)
+        if(inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Wheel)
         {
-            carryTire = true;
+            carryWheel = true;
             carryingPart[0].SetActive(true);
         }
         if (inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Hood)
@@ -44,7 +44,7 @@ public class PlayerPickUp : MonoBehaviour
 
     public void ResetHold()
     {
-        carryTire = false;
+        carryWheel = false;
         carryHood = false;
         isCarrying = false;
         for (int i = 0; i < carryingPart.Length; i++)

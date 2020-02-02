@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        Debug.Log("Fire!");
+        //Debug.Log("Fire!");
         GetComponent<PlayerPickUp>().Fire();
     }
     public void Move(InputAction.CallbackContext context){
@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (position != Vector2.zero)
             {
-                print(gameObject.name);
+                //print(gameObject.name);
                  _anim.SetBool("Walking", true);
-                print(gameObject.name);
+                //print(gameObject.name);
                 var v3Position = new Vector3(position.x, 0, position.y);
                 transform.rotation = Quaternion.LookRotation(v3Position);
             }
