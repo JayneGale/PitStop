@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class MenuNavigation : MonoBehaviour
 {
-    public Button[] menuButtons;
+    public Button menuButtons;
 
     void OnEnable()
     {
-        Invoke("Highlight", 0.1f);
+        Invoke("Highlight", 0.3f);
     }
 
     void Highlight()
     {
-        menuButtons[0].Select();
+        menuButtons.Select();
     }
 }
