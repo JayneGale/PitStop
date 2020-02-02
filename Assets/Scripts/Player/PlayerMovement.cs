@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove;
     
     public Vector2 position;
+    public GameObject[] playerModels;
+    int modelNo = 0;
     public Animator _anim;
 
     public float currentUnwieldyFactor;
@@ -26,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        Debug.Log("Fire!");
         GetComponent<PlayerPickUp>().Fire();
     }
     public void Move(InputAction.CallbackContext context){
@@ -50,6 +51,29 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+    }
+    public void Change(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (modelNo + 1 < playerModels.Length)
+            {
+                modelNo++;
+            }
+            else
+            {
+                modelNo = 0;
+            }
+            bool carrying = _anim.GetBool("Carry");
+            for (int i = 0; i < playerModels.Length; i++)
+            {
+                playerModels[i].SetActive(false);
+            }
+            playerModels[modelNo].SetActive(true);
+            _anim = playerModels[modelNo].GetComponent<Animator>();
+            GetComponent<PlayerPickUp>()._anim = playerModels[modelNo].GetComponent<Animator>();
+            _anim.SetBool("Carry", carrying);
+        }
     }
 
     Vector2 GenerateRandomMovementVector()
