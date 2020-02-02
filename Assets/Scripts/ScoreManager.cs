@@ -6,7 +6,9 @@ public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int score;
+    public float time;
     public Text scoreText;
+    public Text timerText;
     void Start()
     {
         score =0;
@@ -23,5 +25,10 @@ public class ScoreManager : MonoBehaviour
     void FixedUpdate()
     {
         scoreText.text= "SCORE: " + score;
+        timerText.text = (Mathf.Round(time * 100)/100).ToString();
+    }
+    public void UpdateTimeLeft(float timeLeft)
+    {
+        time = timeLeft;
     }
 }
