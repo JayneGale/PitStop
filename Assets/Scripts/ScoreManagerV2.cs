@@ -7,6 +7,7 @@ public class ScoreManagerV2 : MonoBehaviour
     // Start is called before the first frame update
     public int score;
     public float time;
+    public Image timer;
     public Image[] stars;
     public List<List<int>> test;
     public Text scoreText;
@@ -26,7 +27,7 @@ public class ScoreManagerV2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        scoreText.text= "SCORE: " + score;
+        //scoreText.text= "SCORE: " + score;
         UpdateScoreCard();
         timerText.text = (Mathf.Round(time * 100)/100).ToString();
     }
