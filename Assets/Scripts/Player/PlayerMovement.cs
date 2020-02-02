@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     public Vector2 position;
     public GameObject[] playerModels;
-    int modelNo = 0;
+    public int modelNo = 0;
     public Animator _anim;
 
     public float currentUnwieldyFactor;
