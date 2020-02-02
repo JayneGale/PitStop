@@ -28,6 +28,7 @@ public class CarController : MonoBehaviour
     public int scoreValue = 20;
     public float timeout = 30;
     private float timer;
+    AudioManager AM;
     void Start()
     {
         gameObject.transform.position = startPos.position;
@@ -56,6 +57,8 @@ public class CarController : MonoBehaviour
             {
                 score.ScoreUp(scoreValue);
                 haveScored = true;
+                AM.Play("Good");
+
             }
         }
         if (repaired)
