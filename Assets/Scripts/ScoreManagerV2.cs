@@ -7,6 +7,7 @@ public class ScoreManagerV2 : MonoBehaviour
     // Start is called before the first frame update
     public int score;
     public float time;
+    public Image timer;
     public Image[] stars;
     public List<List<int>> test;
     public Text scoreText;
