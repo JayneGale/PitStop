@@ -121,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             canMove = false;
+            FindObjectOfType<AudioManager>().Play("SlipFall");
             bounceLocation = transform.position + (collision.contacts[0].normal * bounceMultiplier);
             StartCoroutine("Bouncing");
         }
