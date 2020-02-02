@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour
     // Movement speed in units per second.
 
     public Transform pitstop;
-    public ScoreManagerV2 score;
+    public ScoreManager score;
     public bool haveScored;
     public float speed = 1.0F;
 
@@ -66,7 +66,7 @@ public class CarController : MonoBehaviour
             // Distance moved equals elapsed time multiplied by speed..
             fixedPathDist += speed * Time.deltaTime;
             // Fraction of journey completed equals current distance divided by total distance.
-            float fixedJourneyPercent = fixedPathDist / repairedPath;
+            float fixedJourneyPercent = repairedPath/ fixedPathDist ;
             if (fixedJourneyPercent < .90)
             {
                 gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, destination.position, fixedJourneyPercent);
@@ -103,6 +103,12 @@ public class CarController : MonoBehaviour
         timer = timeout;
         gameObject.transform.position = startPos.position;
         pitstopDist=0;
-        //do some logic to create broken parts
+        fixedPathDist=0;
+        //do some logic to create broken tyres
+        for (int i = 3; i < carParts.Length; i++)
+        {
+                carParts[i].SetActive(false);
+                isPartThere[i] = false;
+        }
     }
 }
