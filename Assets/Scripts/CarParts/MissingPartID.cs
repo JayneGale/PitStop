@@ -19,7 +19,7 @@ public class MissingPartID : MonoBehaviour
     Pickupable _carriedPart;
     GameObject _missingPart;
     GameObject _brokenPart;
-
+    PlayerPickUp _playerPU;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -27,6 +27,7 @@ public class MissingPartID : MonoBehaviour
         if (other.GetComponent<Pickupable>() != null)
         {
             _carriedPart = other.GetComponent<Pickupable>();
+            _playerPU = other.GetComponentInParent<PlayerPickUp>();
             Debug.Log("_carried part is " + _carriedPart.name + _carriedPart.itemID);
             _missingPart = transform.GetChild(0).gameObject;
             Debug.Log("_missing part is " + _missingPart.name);
@@ -45,7 +46,8 @@ public class MissingPartID : MonoBehaviour
                         {
                             _missingPart.SetActive(true);  //if the Wheel is missing, fix it (turn it on)
                             _carriedPart.gameObject.SetActive(false); //turn off the Wheel the player is carrying
-                            print("Found missing part " + _carriedPart.itemName); 
+                            print("Found missing part " + _carriedPart.itemName);
+                            _playerPU.ResetHold();
                             //UpdateScore(1);
                         }
                     }
@@ -61,6 +63,7 @@ public class MissingPartID : MonoBehaviour
                             _carriedPart.gameObject.SetActive(false);
 
                             print("Found missing part " + _carriedPart.itemName);
+                            _playerPU.ResetHold();
                             //UpdateScore(1);
                         }
                     }
@@ -74,6 +77,7 @@ public class MissingPartID : MonoBehaviour
                             _missingPart.SetActive(true);
                             _brokenPart.SetActive(false);
                             _carriedPart.gameObject.SetActive(false);
+                            _playerPU.ResetHold();
 
                             print("Found missing part " + _carriedPart.itemName);
                             //UpdateScore(1);
@@ -90,6 +94,7 @@ public class MissingPartID : MonoBehaviour
                             _brokenPart.SetActive(false);
                             _carriedPart.gameObject.SetActive(false);
                             print("Found missing part " + _carriedPart.itemName);
+                            _playerPU.ResetHold();
                             //UpdateScore(1);
                         }
                     }

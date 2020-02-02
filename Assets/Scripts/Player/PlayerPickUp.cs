@@ -8,6 +8,10 @@ public class PlayerPickUp : MonoBehaviour
     public bool isCarrying;
     public bool carryWheel;
     public bool carryHood;
+    public bool carryCabin;
+    public bool carryBoot;
+
+
     public GameObject[] carryingPart;
 
     public bool inTrigger;
@@ -40,6 +44,18 @@ public class PlayerPickUp : MonoBehaviour
             carryHood = true;
             carryingPart[1].SetActive(true);
         }
+        if (inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Cabin)
+        {
+            carryCabin = true;
+            carryingPart[2].SetActive(true);
+        }
+        if (inTriggerObject.GetComponent<PartPickup>().carPartEnum == CarPart.Boot)
+        {
+            carryBoot = true;
+            carryingPart[3].SetActive(true);
+        }
+
+
         _anim.SetBool("Carry", true);
     }
 
@@ -47,6 +63,8 @@ public class PlayerPickUp : MonoBehaviour
     {
         carryWheel = false;
         carryHood = false;
+        carryCabin = false;
+        carryBoot = false;
         isCarrying = false;
         for (int i = 0; i < carryingPart.Length; i++)
         {
