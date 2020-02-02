@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4854381592896096661}
   - component: {fileID: 4854381592896096650}
-  - component: {fileID: 4854381592896096660}
   m_Layer: 0
   m_Name: AttachPartsTrigger
   m_TagString: Untagged
@@ -45,21 +44,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4854381592896096660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4854381592896096651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e47cad37885db45967196a98081621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partsRequired: 01
-  wheel: {fileID: 5924828744161395285, guid: 60bacf7b719129c478db15c0f979ea1f, type: 3}
-  hood: {fileID: 4913578072847610710, guid: 0f1f8d181d530da439a7493ba7ea8895, type: 3}
-  cabin: {fileID: 7914922672736953216, guid: cea4ee389a147cb488898f95f4f4fde2, type: 3}
-  boot: {fileID: 3625414607541989129, guid: 3a3f3804d49fb944cb853f9ff0d069a8, type: 3}
-  carCont: {fileID: 0}

@@ -42,8 +42,9 @@ public class CarController : MonoBehaviour
         }
         if(fixedpartcount == carParts.Length){
             repaired =true;
-            if(haveScored==false){   
-                score.scoreUp();
+            if(haveScored==false)
+            {   
+                //score.ScoreUp(1);
                 haveScored =true;
             }
         }

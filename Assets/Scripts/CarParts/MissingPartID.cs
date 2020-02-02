@@ -23,11 +23,11 @@ public class MissingPartID : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collider entered by  " + other.gameObject.name);
+        Debug.Log("Collider entered by  " + other.gameObject.name, gameObject);
         if (other.GetComponent<Pickupable>() != null)
         {
             _carriedPart = other.GetComponent<Pickupable>();
-            Debug.Log("_carried part is " + _carriedPart.name);
+            Debug.Log("_carried part is " + _carriedPart.name + _carriedPart.itemID);
             _missingPart = transform.GetChild(0).gameObject;
             Debug.Log("_missing part is " + _missingPart.name);
 
@@ -39,7 +39,8 @@ public class MissingPartID : MonoBehaviour
                 case MissingPartEnum.Wheel:
                     if (_carriedPart.itemID == 1) //Player is carrying a Wheel
                     {
-                        if (_missingPart.activeSelf) break; //if the Wheel is not missing, don't do anything
+                        print("Missing part is active " + _missingPart.activeSelf + "carried part is active" + _carriedPart.gameObject.activeSelf);
+                        if (_missingPart.activeSelf) break; //if the Wheel is not missing, don't do anything   
                         else
                         {
                             _missingPart.SetActive(true);  //if the Wheel is missing, fix it (turn it on)
