@@ -88,10 +88,3 @@ public class ScoreManagerV2 : MonoBehaviour
         print(printOutString);
     }
 }
-
-[System.Serializable]
-public struct StarSprites
-{
-    public string name;
-    public Image[] sprites;
-}
