@@ -12,9 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0fe86242cb9cb42a878b3b2ee08a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 1
   dropSoundName: HammerM
   itemName: Wheel
-  itemID: 1
+  unwieldyFactor: 0
+--- !u!65 &6774615998990907091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259637850827954065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37733072, y: 0.903002, z: 0.95877707}
+  m_Center: {x: -0.6875313, y: 3.4634008e-15, z: 0}
 --- !u!1001 &9152923032250422724
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -57,7 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e47cad37885db45967196a98081621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsRequired: 0101
-  tyre: {fileID: 0}
-  hood: {fileID: 0}
+  partsRequired: 01
+  wheel: {fileID: 5924828744161395285, guid: 60bacf7b719129c478db15c0f979ea1f, type: 3}
+  hood: {fileID: 4913578072847610710, guid: 0f1f8d181d530da439a7493ba7ea8895, type: 3}
+  cabin: {fileID: 7914922672736953216, guid: cea4ee389a147cb488898f95f4f4fde2, type: 3}
+  boot: {fileID: 3625414607541989129, guid: 3a3f3804d49fb944cb853f9ff0d069a8, type: 3}
   carCont: {fileID: 0}

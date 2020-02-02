@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hood : Pickupable
+public class PartsID : Pickupable
 {
     AudioManager AM;
 
@@ -10,13 +10,13 @@ public class Hood : Pickupable
     {
         AM = FindObjectOfType<AudioManager>();
         AM.Play(dropSoundName);
-        print("_itemID is " + itemID);
+        //print("_itemID is " + itemID);
         Unwieldy(unwieldyFactor);
     }
 
     public override void Unwieldy(int UnwieldyFactor)
     {
-        print("UnwieldyFactor second override is " + UnwieldyFactor + itemID + itemName);
+        //print("UnwieldyFactor second override is " + UnwieldyFactor + itemID + itemName);
     }
 
 }
