@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 2070003027}
+    - target: {fileID: 1013203567037148862, guid: 38146ec8876018441a11510987370da7,
+        type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 2112463054}
     - target: {fileID: 2877924823450223921, guid: 38146ec8876018441a11510987370da7,
         type: 3}
       propertyPath: missingPartenum
@@ -1567,8 +1572,8 @@ Transform:
   - {fileID: 1531141658}
   - {fileID: 1514008304}
   - {fileID: 5006512736250073405}
-  - {fileID: 209726859}
   - {fileID: 8613717925660173583}
+  - {fileID: 209726859}
   - {fileID: 1066137061}
   - {fileID: 603630218}
   - {fileID: 36908094}
@@ -3604,11 +3609,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070003024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abd8ec1b4a86f4488f8a0089d649476, type: 3}
+  m_Script: {fileID: 11500000, guid: 4471fac32e00ba24a823331c301da826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
   time: 0
+  timer: {fileID: 0}
+  stars: []
   scoreText: {fileID: 2102215579}
   timerText: {fileID: 0}
 --- !u!1 &2094075954
@@ -4544,5 +4551,5 @@ Transform:
   m_LocalScale: {x: 58.21486, y: 241.31412, z: 100}
   m_Children: []
   m_Father: {fileID: 581186031}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -28.710001}
