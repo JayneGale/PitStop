@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour
     // Movement speed in units per second.
 
     public Transform pitstop;
-    public ScoreManager score;
+    public ScoreManagerV2 score;
     public bool haveScored;
     public float speed = 1.0F;
 
@@ -31,6 +31,7 @@ public class CarController : MonoBehaviour
     AudioManager AM;
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();
         gameObject.transform.position = startPos.position;
         repairedPath = Vector3.Distance(gameObject.transform.position, destination.position);
         comingtoShop = Vector3.Distance(gameObject.transform.position, pitstop.position);
@@ -82,6 +83,7 @@ public class CarController : MonoBehaviour
         else
         {
             timer -= Time.deltaTime;
+            score.UpdateTimeLeft(timer);
             if(timer<0 && haveScored==false){
                 score.ScoreDown(scoreValue);
                 haveScored=true;

@@ -23,6 +23,12 @@ public class MissingPartID : MonoBehaviour
     AudioManager AM;
 
 
+    private void Start()
+    {
+        AM = FindObjectOfType<AudioManager>();
+    }
+
+
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collider entered by  " + other.gameObject.name, gameObject);

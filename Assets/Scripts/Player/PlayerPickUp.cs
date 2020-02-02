@@ -56,7 +56,7 @@ public class PlayerPickUp : MonoBehaviour
             carryingPart[3].SetActive(true);
         }
 
-        AM.Play("Click");
+        FindObjectOfType<AudioManager>().Play("Click");
         _anim.SetBool("Carry", true);
     }
 

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float bounceMultiplier;
     public float bounceSpeed;
     public bool canMove;
+    bool isBouncing;
     
     public Vector2 position;
     public GameObject[] playerModels;
@@ -118,11 +119,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && !isBouncing)
         {
             canMove = false;
             FindObjectOfType<AudioManager>().Play("SlipFall");
             bounceLocation = transform.position + (collision.contacts[0].normal * bounceMultiplier);
+            isBouncing = true;
             StartCoroutine("Bouncing");
         }
     }
@@ -135,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
             if(Vector3.Distance(transform.position, bounceLocation) < 0.1f)
             {
                 canMove = true;
+                isBouncing = false;
                 yield break;
             }
             yield return new WaitForSeconds(0.01f);
