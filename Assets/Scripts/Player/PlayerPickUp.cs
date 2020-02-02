@@ -18,6 +18,7 @@ public class PlayerPickUp : MonoBehaviour
     public GameObject inTriggerObject;
 
     public Animator _anim;
+    AudioManager AM;
 
     // Update is called once per frame
     public void Fire()
@@ -55,7 +56,7 @@ public class PlayerPickUp : MonoBehaviour
             carryingPart[3].SetActive(true);
         }
 
-
+        AM.Play("Click");
         _anim.SetBool("Carry", true);
     }
 
