@@ -21,7 +21,7 @@ public class PlayerSpawn : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         transform.position = spawnPoint;
-        GetComponent<Renderer>().enabled = true;
+        GetComponent<PlayerMovement>().playerModels[GetComponent<PlayerMovement>().modelNo].SetActive(true);
         GetComponent<PlayerMovement>().canMove = true;
     }
 }
